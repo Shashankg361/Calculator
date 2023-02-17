@@ -36,7 +36,7 @@ equalTo.addEventListener('click',event =>{
     calc.displayUpper(currVal,operator);
     currVal = '';
     calc.displayLower(currVal);
-    calc.division();
+    calc.calculation();
 })
 
 /*const displayUpper = pervVal =>{

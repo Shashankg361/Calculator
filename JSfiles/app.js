@@ -40,25 +40,91 @@ class calculator{
                 })
             }
             this.experssion = splittedExpression;
-            console.log(splittedExpression);
-            console.log(this.experssion);
     }
 
     multiplication(){
+        let splittedExpression =this.experssion;
+            let counter = 0;
+            splittedExpression.map((splittedVal,index)=>{
+                if(splittedVal === '*'){
+                    counter++;
+                }
+            });
+            for(let i= 0 ; i< counter ; i++ ){
+                splittedExpression.map((splittedVal,index)=>{
+                    if(splittedVal === '*'){
+                        splittedExpression[index-1] = parseInt(splittedExpression[index-1]) / parseInt(splittedExpression[index+1]);
+                        splittedExpression[index] = null;
+                        splittedExpression[index+1] = null;
+                    }
+                })
+                splittedExpression = splittedExpression.filter((Value)=>{
+                    return Value != null;
+                })
+            }
+            this.experssion = splittedExpression;
+    }
+
+    addition(){
+        let splittedExpression =this.experssion;
+            let counter = 0;
+            splittedExpression.map((splittedVal,index)=>{
+                if(splittedVal === '+'){
+                    counter++;
+                }
+            });
+            for(let i= 0 ; i< counter ; i++ ){
+                splittedExpression.map((splittedVal,index)=>{
+                    if(splittedVal === '+'){
+                        splittedExpression[index-1] = parseInt(splittedExpression[index-1]) / parseInt(splittedExpression[index+1]);
+                        splittedExpression[index] = null;
+                        splittedExpression[index+1] = null;
+                    }
+                })
+                splittedExpression = splittedExpression.filter((Value)=>{
+                    return Value != null;
+                })
+            }
+            this.experssion = splittedExpression;
 
     }
+
+    subtraction(){
+        let splittedExpression =this.experssion.split(' ');
+            let counter = 0;
+            splittedExpression.map((splittedVal,index)=>{
+                if(splittedVal === '-'){
+                    counter++;
+                }
+            });
+            for(let i= 0 ; i< counter ; i++ ){
+                splittedExpression.map((splittedVal,index)=>{
+                    if(splittedVal === '-'){
+                        splittedExpression[index-1] = parseInt(splittedExpression[index-1]) / parseInt(splittedExpression[index+1]);
+                        splittedExpression[index] = null;
+                        splittedExpression[index+1] = null;
+                    }
+                })
+                splittedExpression = splittedExpression.filter((Value)=>{
+                    return Value != null;
+                })
+            }
+            this.experssion = splittedExpression;
+    }
+
+    calculation(){
+            division();
+            multiplication();
+            addition();
+            subtraction();
+            
+            lower.setAttribute("value",this.experssion);
+        }
 
 }
 
 
 
-
-    /*calculation(){
-        
-
-}*/
-
-
-/*class calcu extends calculator{
-
-}*/
+class calcu extends calculator{
+    
+}
