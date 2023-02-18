@@ -4,6 +4,7 @@ class calculator{
         this.currVal 
         this.operator 
         this.experssion= " " ;
+        
     }
 
     displayLower(currVal){
@@ -16,11 +17,12 @@ class calculator{
         document.getElementById('upperDisplay').setAttribute("value",this.experssion);
         this.pervVal = pervVal
         this.operator = operator
-        this.displayLower(this.operator)
+        this.displayLower(this.operator);
+        
     }
 
     division(){
-            let splittedExpression =this.experssion.split(' ');
+            let splittedExpression =this.experssion;
             let counter = 0;
             splittedExpression.map((splittedVal,index)=>{
                 if(splittedVal === '/'){
@@ -90,7 +92,7 @@ class calculator{
     }
 
     subtraction(){
-        let splittedExpression =this.experssion.split(' ');
+        let splittedExpression =this.experssion;
             let counter = 0;
             splittedExpression.map((splittedVal,index)=>{
                 if(splittedVal === '-'){
@@ -113,12 +115,13 @@ class calculator{
     }
 
     calculation(){
-            division();
-            multiplication();
-            addition();
-            subtraction();
+            this.experssion = this.experssion.split(' ');
+            this.division();
+            this.multiplication();
+            this.addition();
+            this.subtraction();
             
-            lower.setAttribute("value",this.experssion);
+            lower.setAttribute("value",this.experssion[1]);
         }
 
 }
