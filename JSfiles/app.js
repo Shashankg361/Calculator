@@ -9,7 +9,7 @@ class calculator{
 
     displayLower(currVal){
         lower.setAttribute("value",currVal);
-        this.currVal=currVal
+        this.currVal=currVal;
     }
 
     displayUpper(pervVal,operator){
@@ -134,10 +134,18 @@ class calculator{
 
         cleared(){
             this.experssion = " " ;
-            lower.setAttribute('value',this.experssion);   
+            this.currVal = " ";
+            document.getElementById('upperDisplay').setAttribute("value",this.experssion);
+            lower.setAttribute('value',this.currVal);   
+        }
+
+        doBackSpace(){
+                this.currVal = this.currVal.toString().slice(0,-1);
+                currVal = this.currVal
+                lower.setAttribute('value',this.currVal);
         }
 }
-
+       
 
 
 class calcu extends calculator{

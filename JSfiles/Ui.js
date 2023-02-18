@@ -39,6 +39,14 @@ equalTo.addEventListener('click',event =>{
     calc.calculation();
 })
 
+clear.addEventListener('click',()=>{
+    calc.cleared();
+})
+
+backscpace.addEventListener('click',()=>{
+    calc.doBackSpace();
+})
+
 const calc = new calculator();
 
 
