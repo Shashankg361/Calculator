@@ -29,6 +29,7 @@ class calculator{
                     counter++;
                 }
             });
+            console.log(counter);
             for(let i= 0 ; i< counter ; i++ ){
                 splittedExpression.map((splittedVal,index)=>{
                     if(splittedVal === '/'){
@@ -55,7 +56,7 @@ class calculator{
             for(let i= 0 ; i< counter ; i++ ){
                 splittedExpression.map((splittedVal,index)=>{
                     if(splittedVal === '*'){
-                        splittedExpression[index-1] = parseInt(splittedExpression[index-1]) / parseInt(splittedExpression[index+1]);
+                        splittedExpression[index-1] = parseInt(splittedExpression[index-1]) * parseInt(splittedExpression[index+1]);
                         splittedExpression[index] = null;
                         splittedExpression[index+1] = null;
                     }
@@ -78,7 +79,7 @@ class calculator{
             for(let i= 0 ; i< counter ; i++ ){
                 splittedExpression.map((splittedVal,index)=>{
                     if(splittedVal === '+'){
-                        splittedExpression[index-1] = parseInt(splittedExpression[index-1]) / parseInt(splittedExpression[index+1]);
+                        splittedExpression[index-1] = parseInt(splittedExpression[index-1]) + parseInt(splittedExpression[index+1]);
                         splittedExpression[index] = null;
                         splittedExpression[index+1] = null;
                     }
@@ -102,7 +103,7 @@ class calculator{
             for(let i= 0 ; i< counter ; i++ ){
                 splittedExpression.map((splittedVal,index)=>{
                     if(splittedVal === '-'){
-                        splittedExpression[index-1] = parseInt(splittedExpression[index-1]) / parseInt(splittedExpression[index+1]);
+                        splittedExpression[index-1] = parseInt(splittedExpression[index-1]) - parseInt(splittedExpression[index+1]);
                         splittedExpression[index] = null;
                         splittedExpression[index+1] = null;
                     }
@@ -116,14 +117,25 @@ class calculator{
 
     calculation(){
             this.experssion = this.experssion.split(' ');
+            this.experssion = this.experssion.filter((value)=>{
+                return value != "";
+            })
+            console.log(this.experssion)
             this.division();
             this.multiplication();
             this.addition();
             this.subtraction();
             
-            lower.setAttribute("value",this.experssion[1]);
+            lower.setAttribute("value",this.experssion[0]);
+            this.experssion = this.experssion[0];
+            console.log(this.experssion)
+
         }
 
+        cleared(){
+            this.experssion = " " ;
+            lower.setAttribute('value',this.experssion);   
+        }
 }
 
 
