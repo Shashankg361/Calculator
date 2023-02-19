@@ -12,7 +12,6 @@ let operator = '';
 IntButton.forEach(button=>{
     button.addEventListener('click',event=>{
     currVal += event.target.innerHTML ;
-    //lower.setAttribute("value",currVal);
     calc.displayLower(currVal);
     });
 });
@@ -21,7 +20,6 @@ operators.forEach(opr =>{
     opr.addEventListener('click',event=>{
         operator = event.target.innerHTML;
         operator = operator.slice(0,1) + ' ';
-        //calc.displayLower(currVal);
         pervVal += currVal + ' ';
         calc.displayUpper(pervVal,operator);
         currVal = '';

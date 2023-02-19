@@ -29,7 +29,6 @@ class calculator{
                     counter++;
                 }
             });
-            console.log(counter);
             for(let i= 0 ; i< counter ; i++ ){
                 splittedExpression.map((splittedVal,index)=>{
                     if(splittedVal === '/'){
@@ -120,7 +119,6 @@ class calculator{
             this.experssion = this.experssion.filter((value)=>{
                 return value != "";
             })
-            console.log(this.experssion)
             this.division();
             this.multiplication();
             this.addition();
@@ -128,8 +126,6 @@ class calculator{
             
             lower.setAttribute("value",this.experssion[0]);
             this.experssion = this.experssion[0];
-            console.log(this.experssion)
-
         }
 
         cleared(){
@@ -144,10 +140,4 @@ class calculator{
                 currVal = this.currVal
                 lower.setAttribute('value',this.currVal);
         }
-}
-       
-
-
-class calcu extends calculator{
-    
 }
