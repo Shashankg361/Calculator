@@ -4,7 +4,6 @@ class calculator{
         this.currVal 
         this.operator 
         this.experssion= " " ;
-        
     }
 
     displayLower(currVal){
